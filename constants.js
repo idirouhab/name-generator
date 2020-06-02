@@ -19,7 +19,8 @@ const application = [
 ];
 
 const serviceName = [
-    "AD, MSSQL",
+    "AD",
+    "MSSQL",
     "Sybase",
     "Oracle",
     "Storage",
