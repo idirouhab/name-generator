@@ -48,6 +48,14 @@ const status = [
     "down",
 ];
 
+const priority = [
+    "critical",
+    "high",
+    "medium",
+    "low",
+];
+
+
 const items = {
     dc,
     env,
@@ -55,7 +63,8 @@ const items = {
     service,
     eventSource,
     metric,
-    status
+    status,
+    priority
 };
 
 const getRandomItem = (itemName) => {
@@ -89,6 +98,7 @@ const getMix = () => {
         eventSource: getRandomItem('eventSource'),
         metric: getRandomItem('metric'),
         status: getRandomItem('status'),
+        priority: getRandomItem('priority'),
     };
 };
 
