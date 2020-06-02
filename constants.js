@@ -18,7 +18,15 @@ const application = [
     "caplin",
 ];
 
-const service = [
+const serviceName = [
+    "AD, MSSQL",
+    "Sybase",
+    "Oracle",
+    "Storage",
+    "WebSSO",
+];
+
+const serviceType = [
     "database",
     "network",
     "applications",
@@ -55,16 +63,42 @@ const priority = [
     "low",
 ];
 
+const automation = [
+    "Ansible",
+    "Control-M",
+    "Bladelogic",
+];
+
+const policy = [
+    "infra_cpu,",
+    "infra_mem",
+    "infra_space",
+    "app_throughput",
+    "app_latency",
+];
+
+const cloudRegion = [
+    "db-dc,",
+    "azure-us",
+    "azure-emea",
+];
+
+
+
 
 const items = {
     dc,
     env,
     application,
-    service,
+    serviceName,
+    serviceType,
     eventSource,
     metric,
     status,
-    priority
+    priority,
+    automation,
+    policy,
+    cloudRegion
 };
 
 const getRandomItem = (itemName) => {
@@ -94,11 +128,15 @@ const getMix = () => {
         env: env,
         hostname: `${dc}-${env}-${iterator}`,
         application: getRandomItem('application'),
-        service: getRandomItem('service'),
+        serviceName: getRandomItem('serviceName'),
+        serviceType: getRandomItem('serviceType'),
         eventSource: getRandomItem('eventSource'),
         metric: getRandomItem('metric'),
         status: getRandomItem('status'),
         priority: getRandomItem('priority'),
+        automation: getRandomItem('automation'),
+        policyName: getRandomItem('policy'),
+        cloudRegion: getRandomItem('cloudRegion'),
     };
 };
 
