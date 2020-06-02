@@ -1,7 +1,5 @@
 const {getRandomItem} = require('./constants');
 const app = require('restana')({});
-
-const Insights = require('../solace/insights');
 const hostNameGenerator = () => {
     const elements = [
         getRandomItem('dc'),
