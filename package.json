@@ -9,7 +9,8 @@
   "author": "Idir Ouhab Meskine",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "newrelic": "^6.8.0"
   },
   "devDependencies": {},
   "description": ""
