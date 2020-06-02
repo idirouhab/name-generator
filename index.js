@@ -10,14 +10,13 @@ const hostNameGenerator = () => {
     ];
     return elements.join("-");
 };
-
+const LIMIT = 100000;
 app.get('/api/:number', (req, res) => {
-    const amount = req.params.number;
-
+    const amount = req.params.number > LIMIT ? LIMIT : req.params.number;
     res.send({names: Array.from({length: amount}, () => hostNameGenerator())})
 });
 
 
-app.start(3000).then(()=>{
+app.start(3000).then(() => {
     console.log('Running  onport 3000')
 });
