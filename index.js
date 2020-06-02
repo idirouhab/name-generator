@@ -1,3 +1,4 @@
+require('newrelic');
 const {getRandomItem} = require('./constants');
 const express = require('express');
 const app = express();
