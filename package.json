@@ -9,7 +9,7 @@
   "author": "Idir Ouhab Meskine",
   "license": "ISC",
   "dependencies": {
-    "restana": "^4.6.1"
+    "express": "^4.17.1"
   },
   "devDependencies": {},
   "description": ""

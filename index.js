@@ -1,5 +1,6 @@
 const {getRandomItem} = require('./constants');
-const app = require('restana')({});
+const express = require('express');
+const app = express();
 const hostNameGenerator = () => {
     const elements = [
         getRandomItem('dc'),
@@ -14,7 +15,7 @@ app.get('/api/:number', (req, res) => {
     res.send({names: Array.from({length: amount}, () => hostNameGenerator())})
 });
 
-const PORT = process.env.PORT || 8080
-app.start(PORT).then(() => {
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, function() {
     console.log(`Running  on port ${PORT}`);
 });
