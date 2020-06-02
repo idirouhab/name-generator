@@ -11,10 +11,37 @@ const env = [
     "uat",
 ];
 
+const application = [
+    "autobahn",
+    "rfx",
+    "fidessa",
+    "caplin",
+];
+
+const service = [
+    "database",
+    "network",
+    "applications",
+    "browser",
+];
+
+const eventSource = [
+    "geneos",
+    "nimsoft",
+    "netscout",
+    "as400",
+    "nagios",
+    "sensu",
+];
+
 const items = {
     dc,
     env,
+    application,
+    service,
+    eventSource
 };
+
 
 const getRandomItem = (itemName) => {
     if (itemName === 'iterator') {
