@@ -14,7 +14,7 @@ app.get('/api/:number', (req, res) => {
     res.send({names: Array.from({length: amount}, () => hostNameGenerator())})
 });
 
-
-app.start(8080).then(() => {
-    console.log('Running  onport 8080')
+const PORT = process.env.PORT || 8080
+app.start(PORT).then(() => {
+    console.log(`Running  on port ${PORT}`);
 });
