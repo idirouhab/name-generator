@@ -1,30 +1,30 @@
 const dc = [
   "fft",
   "lon",
-  "ny",
-  "chi",
+/*  "ny",
+  "chi"*/,
 ];
 
 const env = [
   "prod",
-  "dev",
+  //"dev",
   "uat",
 ];
 
 const application = [
   "autobahn",
   "rfx",
-  "fidessa",
-  "caplin",
+/*  "fidessa",
+  "caplin",*/
 ];
 
 const serviceName = [
   "AD",
   "MSSQL",
-  "Sybase",
+/*  "Sybase",
   "Oracle",
   "Storage",
-  "WebSSO",
+  "WebSSO",*/
 ];
 
 const serviceType = [
@@ -37,19 +37,19 @@ const serviceType = [
 const eventSource = [
   "geneos",
   "nimsoft",
-  "netscout",
+/*  "netscout",
   "as400",
   "nagios",
-  "sensu",
+  "sensu",*/
 ];
 
 const metric = [
   "cpu_utilisation",
   "mem_percent_free",
-  "disk_space_free",
+/*  "disk_space_free",
   "net_bytes_dropped",
   "throughput",
-  "response_time",
+  "response_time",*/
 ];
 
 const status = [
@@ -73,9 +73,9 @@ const automation = [
 const policy = [
   "infra_cpu,",
   "infra_mem",
-  "infra_space",
+/*  "infra_space",
   "app_throughput",
-  "app_latency",
+  "app_latency",*/
 ];
 
 const cloudRegion = [
