@@ -80,13 +80,13 @@ const policy = [
 
 const cloudRegion = [
   "db-dc,",
-/*  "azure-us",
-  "azure-emea",*/
+  /*  "azure-us",
+    "azure-emea",*/
 ];
 
 const description = [
   "Similique aut dolorem ullam sint at eaque quaerat nihil ut.",
-/*  "Sed animi maxime harum vero.",*/
+  /*  "Sed animi maxime harum vero.",*/
 ];
 
 const items = {
@@ -107,11 +107,11 @@ const items = {
 
 const getRandomItem = (itemName) => {
   if (itemName === "iterator") {
-    return Math.floor(Math.random() * 100) + 1;
+    return 1;
   }
-  const item = items[itemName];
+  return items[itemName][0];
 
-  return item[Math.floor(Math.random() * item.length)];
+  //return item[Math.floor(Math.random() * item.length)];
 };
 
 const hostNameGenerator = () => {
