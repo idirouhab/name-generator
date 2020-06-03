@@ -1,92 +1,92 @@
 const dc = [
   "fft",
-  "lon",
-/*  "ny",
-  "chi"*/,
+  /*  "lon",
+    "ny",
+    "chi"*/,
 ];
 
 const env = [
   "prod",
-  //"dev",
-  "uat",
+  /*  "dev",
+    "uat",*/
 ];
 
 const application = [
   "autobahn",
-  "rfx",
-/*  "fidessa",
-  "caplin",*/
+  /*  "rfx",
+    "fidessa",
+    "caplin",*/
 ];
 
 const serviceName = [
   "AD",
-  "MSSQL",
-/*  "Sybase",
-  "Oracle",
-  "Storage",
-  "WebSSO",*/
+  /*   "MSSQL",
+   "Sybase",
+    "Oracle",
+    "Storage",
+    "WebSSO",*/
 ];
 
 const serviceType = [
   "database",
-  "network",
-  "applications",
-  "browser",
+  /*  "network",
+    "applications",
+    "browser",*/
 ];
 
 const eventSource = [
   "geneos",
-  "nimsoft",
-/*  "netscout",
-  "as400",
-  "nagios",
-  "sensu",*/
+  /*   "nimsoft",
+   "netscout",
+    "as400",
+    "nagios",
+    "sensu",*/
 ];
 
 const metric = [
   "cpu_utilisation",
-  "mem_percent_free",
-/*  "disk_space_free",
-  "net_bytes_dropped",
-  "throughput",
-  "response_time",*/
+  /*  "mem_percent_free",
+    "disk_space_free",
+    "net_bytes_dropped",
+    "throughput",
+    "response_time",*/
 ];
 
 const status = [
   "up",
-  "down",
+  /*  "down",*/
 ];
 
 const priority = [
   "critical",
-  "high",
-  "medium",
-  "low",
+  /*  "high",
+    "medium",
+    "low",*/
 ];
 
 const automation = [
   "Ansible",
-  "Control-M",
-  "Bladelogic",
+//  "Control-M",
+//  "Bladelogic",
 ];
 
 const policy = [
   "infra_cpu,",
-  "infra_mem",
-/*  "infra_space",
-  "app_throughput",
-  "app_latency",*/
+//  "infra_mem",
+  /*  "infra_space",
+    "app_throughput",
+    "app_latency",*/
 ];
 
 const cloudRegion = [
   "db-dc,",
-  "azure-us",
-  "azure-emea",
+/*  "azure-us",
+  "azure-emea",*/
 ];
 
 const description = [
   "Similique aut dolorem ullam sint at eaque quaerat nihil ut.",
-  "Sed animi maxime harum vero.",
+/*  "Sed animi maxime harum vero.",*/
 ];
 
 const items = {
