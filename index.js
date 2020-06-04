@@ -1,5 +1,6 @@
 require("newrelic");
 const { hostNameGenerator, getRandomItem, getMix } = require("./constants");
+const { generateCase } = require("./case-generator");
 const express = require("express");
 const app = express();
 
@@ -36,7 +37,7 @@ app.get("/api/status/:number", (req, res) => {
 
 app.get("/api/data-center/:number", (req, res) => {
   const amount = req.params.number > LIMIT ? LIMIT : req.params.number;
-  res.send({ names: Array.from({ length: amount }, () => getRandomItem("dc")) });
+  res.send({ names: Array.from({ length: amount }, () => getRandomItem("dataCenter")) });
 });
 
 app.get("/api/mix/:number", (req, res) => {
@@ -46,10 +47,15 @@ app.get("/api/mix/:number", (req, res) => {
 
 app.get("/api/environment/:number", (req, res) => {
   const amount = req.params.number > LIMIT ? LIMIT : req.params.number;
-  res.send({ names: Array.from({ length: amount }, () => getRandomItem("env")) });
+  res.send({ names: Array.from({ length: amount }, () => getRandomItem("environment")) });
 });
 
-const PORT = process.env.PORT || 8080;
+app.get("/api", (req, res) => {
+  const cases = generateCase();
+  res.send({ data: cases,});
+});
+
+const PORT = process.env.PORT || 8081;
 app.listen(PORT, function () {
   console.log(`Running  on port ${PORT}`);
 });

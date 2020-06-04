@@ -1,97 +1,107 @@
-const dc = [
+const _ = require("underscore");
+
+const dataCenter = [
   "fft",
-  /*  "lon",
-    "ny",
-    "chi"*/,
+  "lon",
+  "ny",
+  "chi",
 ];
 
-const env = [
+const cluster = [
+  "eu-east-1",
+  "eu-west-1",
+  "eu-central-1",
+];
+
+const environment = [
   "prod",
-  /*  "dev",
-    "uat",*/
+  "dev",
+  "uat",
 ];
 
 const application = [
   "autobahn",
-  /*  "rfx",
-    "fidessa",
-    "caplin",*/
+  "rfx",
+  "fidessa",
+  "caplin",
 ];
 
 const serviceName = [
   "AD",
-  /*   "MSSQL",
-   "Sybase",
-    "Oracle",
-    "Storage",
-    "WebSSO",*/
+  "MSSQL",
+  "Sybase",
+  "Oracle",
+  "Storage",
+  "WebSSO",
 ];
 
 const serviceType = [
   "database",
-  /*  "network",
-    "applications",
-    "browser",*/
+  "network",
+  "applications",
+  "browser",
 ];
 
 const eventSource = [
   "geneos",
-  /*   "nimsoft",
-   "netscout",
-    "as400",
-    "nagios",
-    "sensu",*/
+  "nimsoft",
+  "netscout",
+  "as400",
+  "nagios",
+  "sensu",
 ];
 
 const metric = [
   "cpu_utilisation",
-  /*  "mem_percent_free",
-    "disk_space_free",
-    "net_bytes_dropped",
-    "throughput",
-    "response_time",*/
+  "mem_percent_free",
+  "disk_space_free",
+  "net_bytes_dropped",
+  "throughput",
+  "response_time",
 ];
 
 const status = [
   "up",
-  /*  "down",*/
+  "down",
 ];
 
 const priority = [
   "critical",
-  /*  "high",
-    "medium",
-    "low",*/
+  "high",
+  "medium",
+  "low",
 ];
 
 const automation = [
   "Ansible",
-//  "Control-M",
-//  "Bladelogic",
+  "Control-M",
+  "Bladelogic",
 ];
 
 const policy = [
   "infra_cpu,",
-//  "infra_mem",
-  /*  "infra_space",
-    "app_throughput",
-    "app_latency",*/
+  "infra_mem",
+  "infra_space",
+  "app_throughput",
+  "app_latency",
 ];
 
 const cloudRegion = [
   "db-dc,",
-  /*  "azure-us",
-    "azure-emea",*/
+  "azure-us",
+  "azure-emea",
 ];
 
 const description = [
-  "Similique aut dolorem ullam sint at eaque quaerat nihil ut.",
-  /*  "Sed animi maxime harum vero.",*/
+  "%s reached 90%",
+  "cannot store new record to %s",
+
 ];
 
 const items = {
-  dc,
-  env,
+  cluster,
+  dataCenter,
+  environment,
   application,
   serviceName,
   serviceType,
@@ -107,17 +117,18 @@ const items = {
 
 const getRandomItem = (itemName) => {
   if (itemName === "iterator") {
-    return 1;
+    return Math.floor(Math.random() * 5);
   }
-  return items[itemName][0];
+  const item = items[itemName];
 
-  //return item[Math.floor(Math.random() * item.length)];
+  return _.shuffle(item)[0];
+  ;
 };
 
 const hostNameGenerator = () => {
   const elements = [
-    getRandomItem("dc"),
-    getRandomItem("env"),
+    getRandomItem("dataCenter"),
+    getRandomItem("environment"),
     getRandomItem("iterator"),
   ];
   return elements.join("-");
@@ -125,12 +136,13 @@ const hostNameGenerator = () => {
 
 const getMix = () => {
   const iterator = getRandomItem("iterator");
-  const dc = getRandomItem("dc");
-  const env = getRandomItem("env");
+  const dataCenter = getRandomItem("dataCenter");
+  const environment = getRandomItem("environment");
   return {
-    dc: dc,
-    env: env,
-    hostname: `${dc}-${env}-${iterator}`,
+    dataCenter: dataCenter,
+    cluster: cluster,
+    environment: environment,
+    hostname: `${dataCenter}-${environment}-${iterator}`,
     application: getRandomItem("application"),
     serviceName: getRandomItem("serviceName"),
     serviceType: getRandomItem("serviceType"),

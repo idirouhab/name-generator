@@ -4,14 +4,18 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Idir Ouhab Meskine",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "newrelic": "^6.8.0"
+    "newrelic": "^6.8.0",
+    "underscore": "^1.10.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
   "description": ""
 }
